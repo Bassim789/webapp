@@ -100,7 +100,9 @@ page.login_to_admin = class
 ```
 
 ##Installation
-Download the repesitory and put it in your www folder. You can also put it in a sub-folder of an existant website, in this case you have to use an empty database and one that you are already using. When you first go to your website there is a little form asking for your email, password and database information. If you see some PHP warning about file permission you can try to change all the file persission to 775. It's not the most secure way but it's ok for a developpement project. When you have submited the form an email is sent, you click on the link and your Webapp is ready. You can now login to the admin and start building your project!
+Download the repesitory and put it in your www folder. You can also put it in a sub-folder of an existant website, in this case you have to use an empty database and not one that you are already using. When you first go to your website there is a little form asking for your email, password and database information. If you see some PHP warning about file permission you can try to change all the file persission to 775. It's not the most secure way but it's ok for a developpement project. When you have submited the form an email is sent, you click on the link and your Webapp is ready. You can now login to the admin and start building your project!
+
+Please be carful if you want to use Webapp in a production website. It's still in early developpement so there is no garanti and the new versions may introduce a lot of change.
 
 
 ##Comming soon
