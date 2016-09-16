@@ -1,0 +1,210 @@
+ 
+<template id="template_page_admin_code_manager">
+	<div style=" text-align: center; display: block; margin-top: 20px; margin-bottom: 20px;">
+	    <div style="display: inline-block;">
+	        <table id="code_manager_table">
+	            
+	            <tr>
+	                <td colspan="2">
+	                    <div class="code_manager_table_section" style="color: #666; background: #fff; font-weight: bold; font-size: 20px;">
+	                        CODE MANAGER
+	                    </div>
+	                </td>
+	            </tr>
+
+	            <tr>
+	                <td colspan="2">
+	                    <div class="code_manager_table_section">
+	                        FILES
+	                    </div>
+	                </td>
+	            </tr>
+
+	            <tr class="code_manager_table_section1">
+	                <td style="width: 50%;">
+	                     <input event="enter:search" id="search_input" type="text" placeholder="Search expression inside" 
+                                style="font-weight: bold; font-size: 20px; text-align: center; width: 350px ; border: none; outline: none; background: transparent; padding: 10px;">
+	                </td>
+	                <td style="width: 50%;">
+	                    <div event="click:diff_dev_prod" class="code_manager_btn">
+	                        Difference dev vs prod
+	                    </div>
+	                </td>
+	            </tr>
+
+	            <tr class="code_manager_table_section1">
+	                <td style="position: relative">
+	                    <div style="position: absolute; top: 0; left: 0; width: 100%;">
+	                        <input type="text" id="code_manager_input_path" readonly placeholder="root">
+	                    </div>
+	                    <div id="ftp_view" style="margin-top: 20px; height: 400px; overflow: scroll;">
+	                    </div>
+	                </td>
+
+	                <td>
+	                    <br>
+	                    Folders to exclude<br>
+	                    <textarea id="exclud_folders_input" placeholder="folders to exclude" 
+                            style="width: 330px; height: 400px; padding: 3px 10px; outline: none; resize: none; border: none; background: transparent;"></textarea>
+	                </td>
+	            </tr>
+	            
+	            <tr>
+	                <td colspan="2">
+	                    <div class="code_manager_table_section" style="background: #666">
+	                        DATABASE
+	                    </div>
+	                </td>
+	            </tr>
+	            <tr class="code_manager_table_section2">
+	                <td style="width: 50%;">
+	                    <div event="click:show_database" class="code_manager_btn" style="margin: 10px;">
+	                        Show Database structure
+	                    </div>
+	                </td>
+	                <td style="width: 50%;">
+	                    <div event="click:diff_dev_prod_database" class="code_manager_btn" style="margin: 10px;">
+	                        Difference dev vs prod Database
+	                    </div>
+	                </td>
+	            </tr>
+	        </table>
+	    </div>
+	    <br>
+	    <div id="result" style="margin-top: 30px; position: relative; width: 600px; min-height: 300px; text-align: left; display: inline-block; vertical-align: top;"></div>
+	</div>
+</template>
+
+<template id="template_table_db_classic">
+    <table class="table_db">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Nb col
+            </th>
+            <th>
+                Nb row
+            </th>
+        </tr>
+        <!-- {{#tables}} -->
+            <tr event="click:toggle_table">
+                <td>
+                    {{table_name}}
+                </td>
+                <td>
+                    {{nb_col}}
+                </td>
+                <td>
+                    {{nb_row}}
+                </td>
+            </tr>
+            <tr event="click:toggle_table_prev" style="display: none;">
+                <td colspan="3">
+                    <table class="table_db">
+                        <tr>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Type
+                            </th>
+                            <th>
+                                Key
+                            </th>
+                            <th>
+                                Default
+                            </th>
+                            <th>
+                                Encoding
+                            </th>
+                        </tr>
+                        <!-- {{#cols}} -->
+                            <!--  {{#first_col_diff}} -->
+                                <tr style="background: rgba(148, 0, 108, 0.3);">
+                            <!--  {{/first_col_diff}} -->
+                            <!--  {{^first_col_diff}} -->
+                                <tr>
+                            <!--  {{/first_col_diff}} -->
+                            
+                                <td>
+                                    {{col_name}}
+                                </td>
+                                <td>
+                                    {{col_type}}
+                                </td>
+                                <td>
+                                    {{col_key}}
+                                </td>
+                                <td>
+                                    {{col_default}}
+                                </td>
+                                <td>
+                                    {{col_encoding}}
+                                </td>
+                            </tr>
+                        <!-- {{/cols}} -->
+                    </table>
+                    <br>
+                </td>
+            </tr>
+        <!-- {{/tables}} -->
+    </table>
+</template>
+
+<template id="template_ftp_view">
+    <table id="code_manager_table_ftp">
+        <!-- {{#rows}} -->
+            
+            <!-- {{#sub}} -->
+                <tr event="click:back_folder" class="code_manager_path_row" data-path="{{back_folder}}">
+                    <td style="width: 35px;">
+                        ...
+                        <img src="app/img/icon/folder.png" style="width: 20px;">
+                    </td>
+                    <td></td>
+                </tr>
+            <!-- {{/sub}} -->
+
+
+            <!-- {{#dir}} -->
+                <tr event="click:change_folder" class="code_manager_path_row" data-path="{{file_clean}}">
+                    <td style="width: 35px;">
+                        <img src="app/img/icon/folder.png" style="width: 20px;">
+                    </td>
+                    <td>
+                        {{file_clean}}
+                    </td>
+                    <td event="click:add_to_exclude" data-path="{{file_clean}}" style="text-align: right;">
+                        <img src="app/img/icon/arrow_right.png" style="width: 25px;">
+                    </td>
+                </tr>
+            <!-- {{/dir}} -->
+
+            <!-- {{#file}} -->
+                <tr class="code_manager_path_row">
+                    <td style="width: 35px;">
+                        <img src="app/img/icon/file_icon.png" style="width: 20px;">
+                    </td>
+                    <td>
+                        {{file_clean}}
+                    </td>
+                </tr>
+            <!-- {{/file}} -->
+
+        <!-- {{/rows}} -->
+    </table>
+</template>
+
+<template id="template_loading">
+    <div style="position: absolute; top: 50px; text-align: center; width: 100%; z-index: 10;">
+        <div class="ball"></div>
+        <div class="ball1"></div>
+    <div>
+</template>
+
+<template id="code_manager_main_exclude">
+img
+lib
+</template>

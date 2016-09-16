@@ -1,0 +1,29 @@
+<template id="template_first_config">
+	<h1>
+		Welcome to 
+		<span style="text-transform: capitalize;">
+			{{title}}
+		</span>
+	</h1>
+	<h2>
+		Please complete the configuration
+	</h2>
+	<form id="first_config_form">
+		<label>
+			Admin
+		</label>
+		<input event="enter:submit" type="email" name="email" placeholder="email">
+		<input event="enter:submit" type="password" name="password" placeholder="password">
+		<label>
+			Database
+		</label>
+		<input event="enter:submit" type="text" name="db_host" placeholder="db host">
+		<input event="enter:submit" type="text" name="db_name" placeholder="db name">
+		<input event="enter:submit" type="text" name="db_user" placeholder="db user">
+		<input event="enter:submit" type="password" name="db_pass" placeholder="db password">
+		<div class="btn" event="click:submit">
+			Save
+		</div>
+		<div class="form_response"></div>
+	</form>
+</template> 

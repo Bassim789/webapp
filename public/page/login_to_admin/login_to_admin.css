@@ -1,0 +1,52 @@
+#login_box{
+	width: 390px;
+	max-width: 100%;
+	margin: auto;
+}
+
+.popup_infobox{
+	width: 390px;
+	max-width: 100%;
+	min-height: 40px;
+	padding: 10px 10px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.table_classic{
+	color: #666;
+	display: inline-block;
+	position: relative;
+	border-collapse: collapse;
+	max-width: 100%;
+	overflow: scroll;
+    overflow-y: hidden!important;
+	-webkit-overflow-scrolling: touch;
+	margin: 0;
+	padding: 0;
+}
+.table_classic tr{
+	
+}
+.table_classic th,
+.table_classic td{
+	padding: 5px 10px;
+}
+.table_classic tr:last-child {
+	border-bottom: none;
+}
+
+.form_action_btn{
+    padding: 10px 20px;
+    background-color: rgba(102, 102, 102, 1);
+    color: #fff;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form_action_btn:active{
+    background-color: rgba(102, 102, 102, 0.8);
+}

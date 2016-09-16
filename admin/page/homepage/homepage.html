@@ -1,0 +1,87 @@
+ 
+<template id="template_page_admin_homepage">
+	<br><br>
+	<div class="big_middle_title noselect">
+		Hello <span id="my_pseudo"></span>
+	</div>
+	<br>
+	<div style="width: 400px; max-width: 100%; display: inline-block; margin-top: 20px; margin-bottom: 20px; position: relative;">
+		<form 	class="magic_form" 
+				data-text="Change password"
+				data-url="admin/api/admin"
+				data-action="change_password">
+			<input type="password" name="old_password" placeholder="old password">
+			<input type="password" name="new_password" placeholder="new password">	
+		</form>
+		<form 	class="magic_form" 
+				data-text="Add new admin"
+				data-url="admin/api/admin"
+				data-action="add_new_admin"
+				data-callback="load">
+			<input type="email" name="email" placeholder="new admin email">
+		</form>
+	</div>
+	<br>
+	<div id="admin_list_box"></div>
+	<br><br>
+	<div id="admin_var_box"></div>
+	<br><br>
+</template>
+
+<template id="template_admin_list_box">
+	<div class="content_box">
+		<table class="table_classic">
+			<!-- {{#admins}} -->
+			<tr>
+				<td>
+					{{name}}
+				</td>
+				<td>
+					connected
+					<br>
+					{{last_connexion}}
+				</td>
+				
+			</tr>
+			<tr style="border-bottom: 1px solid #666;">
+				<td style="min-width: 120px;">
+					{{email_left}}
+					<br>
+					{{email_right}}
+				</td>
+				<td>
+					{{nb_connexion}} loads
+				</td>
+			</tr>
+			<!-- {{/admins}} -->
+		</table>
+	</div>
+</template>
+
+
+<template id="template_admin_var">
+	<div class="reservation_div">
+		<div class="content_box">
+			<table class="table_classic">
+				<!-- {{#var}} -->
+					<tr style="border-bottom: 1px solid #666;">
+						<td>
+							{{name}}
+						</td>
+						<td>
+							<span 	class="editable_input"
+									data-type="text" 
+									data-id-row="{{id}}" 
+									data-val="{{value}}"
+									data-col="value"
+									data-table="var">
+								{{value}}
+							</span>
+						</td>
+					</tr>
+				<!-- {{/var}} -->
+			</table>
+		</div>
+	</div>
+</template>
+

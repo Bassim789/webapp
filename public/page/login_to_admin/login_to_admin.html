@@ -1,0 +1,34 @@
+
+<template id="template_page_login_to_admin">
+	<br><br>
+	<div class="big_middle_title noselect">
+		ADMIN
+	</div>
+	<br>
+	<div class="popup_infobox"></div>
+	<div id="login_box"></div>
+	<br><br>
+</template>
+
+<template id="template_login">
+	<input type="email" id="email_login" class="form_text_input" event="enter:login" placeholder="email" value="{{email}}">
+	<input type="password" id="password_login" class="form_text_input" event="enter:login" placeholder="password">
+	<div class="form_action_btn noselect" event="click:login">
+		Login
+	</div>
+	<br>
+	<div style="text-decoration: underline; cursor: pointer; font-size: 10px;" event="click:reset_password_box">
+		Forget password ?
+	</div>
+</template>
+
+<template id="template_login_reset_password">
+	<input type="email" id="email_new_password" class="form_text_input" event="enter:send_new_password" placeholder="email" value="{{email}}">
+	<div class="form_action_btn noselect" event="click:send_new_password">
+		Send new password
+	</div>
+	<br>
+	<div style="text-decoration: underline; cursor: pointer; font-size: 10px;" event="click:login_box">
+		Login ?
+	</div>
+</template>

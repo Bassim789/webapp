@@ -1,0 +1,18 @@
+footer{
+	width: 100%;
+	position: relative;
+	background: rgba(0,0,0,0.5);
+    background: -webkit-linear-gradient(bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+    background: -o-linear-gradient(bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+    background: -moz-linear-gradient(bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+}
+
+
+#footer_wrap{
+	padding: 16px;
+}
+
+#footer_title{
+	text-transform: uppercase;
+}

@@ -1,0 +1,26 @@
+ 
+<template id="template_header">
+	<div id="header_title" class="noselect" event="click:goto" page="">
+		<img src="{{logo}}" style="height: 50px;">
+	</div>
+	<div id="menu_icon" class="noselect" event="click:toggle_sidr">
+		<img src="app/img/header/menu_icon.png">
+	</div>
+	<div id="overlay_sidebar_menu" event="click:toggle_sidr"></div>
+	<div id="sidr">
+		<div class="sidr_head">
+			<div class="close_btn_wrap" event="click:toggle_sidr">
+				<a class="close_btn"></a>
+			</div>
+		</div>
+		<div style="height: 100vh; overflow: scroll;">
+			<ul style="margin-top: 0px;">
+				<li event="click:goto" page="">
+					HOMEPAGE
+				</li>
+			</ul>
+			<div style="margin-bottom: 70px;""></div>
+		</div>
+	</div>
+</template>
+
