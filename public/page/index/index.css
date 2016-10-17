@@ -1,0 +1,28 @@
+.index_title {
+  padding: 0 20px;
+  border-radius: 50px;
+  color: #666;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.full_height_box {
+  height: auto;
+  display: flex;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  width: 100%;
+}
+.full_height_box div {
+  width: 100%;
+}
+.fixed_full {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  z-index: -1;
+}
+.homepage_main_img {
+  width: 100px;
+}

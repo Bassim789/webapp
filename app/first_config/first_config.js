@@ -1,42 +1,35 @@
-"use strict"
-
-var First_config = class
-{
-	constructor()
-	{
-		template('#body', '#template_first_config',
-		{
+var First_config = class {
+	constructor() {
+		template('#body', '#template_first_config', {
 			title: gvar.title
 		})
-
 		this.url = 'app/first_config/first_config.php'
 		this.form = $('#first_config_form')
-
-		new module.Action(this,
-		{
+		this.test_file_permission()
+		new my_module.Action(this, {
 			click: ['submit'],
 			enter: ['submit']
 		})
 	}
-
-	submit()
-	{
-		var that = this
+	submit() {
 		this.show_res({
 			msg: 'loading...',
 			state: 'load'
 		})
-		console.log('ok')
-		api(this.url, 'connect', this.form.serialize(), function(data)
-		{
-			that.show_res(data)
+		api(this.url, 'connect', this.form.serialize(), (data) => {
+			this.show_res(data)
 		})
 	}
-
-	show_res(data)
-	{
+	show_res(data) {
 		this.form.find('.form_response')
 			.html(data.msg)
 			.attr('class', 'form_response ' + data.state)
+	}
+	test_file_permission() {
+		api(this.url, 'test_file_permission', {}, (data) => {
+			if (data.file_permission_denied) {
+				error_catcher.simple_msg('File permission denied')
+			}
+		})
 	}
 }

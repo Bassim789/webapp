@@ -1,43 +1,15 @@
-
-<style>
-.error_catcher_stacks{
-	padding: 3px 0px;
-}
-
-.error_catcher_stacks div{
-	display: inline-block;
-	padding: 0px 5px; 
-	word-break: break-all;
-}
-</style>
-
-<template id="template_error_catcher">
-	<br><br>
-	<div class="content_box" style="width: 100%; max-width: 800px;">
-		<div>
-			ERROR
+<div class="error_catcher_box">
+	<div>ERROR</div>
+	<h3>{{url}}</h3>
+	<div>{{{message}}}</div>
+	<br>
+	<div>
+		{{#stacks}}
+		<div class="error_catcher_stacks">
+			<div>{{obj}}</div>
+			<div>{{url}}</div>
+			<div>line {{line}}</div>
 		</div>
-		<h3>
-			{{url}}
-		</h3>
-		<div>
-			{{{message}}}
-		</div>
-		<br>
-		<div>
-			{{#stacks}}
-			<div class="error_catcher_stacks">
-				<div>
-					{{obj}}
-				</div>
-				<div>
-					{{url}}
-				</div>
-				<div>
-					line {{line}}
-				</div>
-			</div>
-			{{/stacks}}
-		</div>
+		{{/stacks}}
 	</div>
-</template>
+</div>

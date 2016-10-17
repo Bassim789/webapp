@@ -1,0 +1,13 @@
+<template id="template_magic_form">
+	<div class="magic_form_content" style="display: none; position: relative;">
+		<img 	event="click:close_magic_form"
+				src="app/img/action/close_icon.png"
+				class="close_icon"
+				style="position: absolute; right: 0; top: 3px; width: 35px; z-index: 2;">
+		<div class="magic_form_info_box"></div>
+		{{{inputs}}}
+	</div>
+	<div class="btn" event="click:toggle_magic_form" style="margin-bottom: 20px;">
+		{{text}}
+	</div>
+</template>

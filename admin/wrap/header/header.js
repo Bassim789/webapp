@@ -1,16 +1,9 @@
-"use strict"
- 
-admin.Header = class extends Header
-{
-	constructor()
-	{
+admin.Header = class extends Header {
+	constructor() {
 		super()
 	}
-
-	event()
-	{
-		new module.Action(this,
-		{
+	event() {
+		new my_module.Action(this, {
 			click: [
 				'toggle_sidr',
 				'logout',
@@ -18,27 +11,18 @@ admin.Header = class extends Header
 			]
 		})
 	}
-
-	load()
-	{
-		template('header', '#template_admin_header',
-		{
-			logo: gvar.logo
+	load() {
+		template('header', '#template_admin_header', {
+			logo: gvar.img.logo
 		})
 		this.load_backround_sidr()
 	}
-
-	reset_auto_logout()
-	{
+	reset_auto_logout() {
 		app.Timeout.reset_auto_logout()
 	}
-	
-	logout()
-	{
-		api('admin/api/admin', 'logout', {}, function()
-		{
+	logout() {
+		api('admin/api/admin', 'logout', {}, () => {
 			location.href = 'login_to_admin'
 		})
 	}
 }
-

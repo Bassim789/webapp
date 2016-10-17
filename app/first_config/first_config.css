@@ -1,66 +1,67 @@
-#first_config_form{
-	margin: 0 auto;
-	margin-bottom: 50px;
-	width: 100%;
-	max-width: 390px;
+#first_config_form {
+  margin: 0 auto;
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: 390px;
+  color: #fff;
 }
-#first_config_form input{
-	display: block;
-    width: 100%;
-    padding: 10px 20px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-appearance: none;
-    border-radius: 0px;
-    outline: none;
-    border: 1px solid #ddd;
-    box-shadow: none;
-    margin: 0px;
+#first_config_form input {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border-radius: 0px;
+  outline: none;
+  border: 1px solid #ddd;
+  box-shadow: none;
+  margin: 0px;
 }
-#first_config_form label{
-    display: block;
-	margin-top: 15px;
+#first_config_form label {
+  display: block;
+  margin-top: 15px;
 }
-#first_config_form .btn{
-    display: block;
-    width: 100%;
-    padding: 10px 20px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-appearance: none;
-    border-radius: 0px;
-    outline: none;
-    border: 1px solid #ddd;
-    box-shadow: none;
-    margin: 0px;
-    margin-top: 25px;
-    cursor: pointer;	
+#first_config_form .btn {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border-radius: 0px;
+  outline: none;
+  border: 1px solid #ddd;
+  box-shadow: none;
+  margin: 0px;
+  margin-top: 25px;
+  cursor: pointer;
 }
-#first_config_form .btn:active{
-    background: rgba(0,0,0,0.2);	
+#first_config_form .btn:active {
+  background: rgba(0,0,0,0.2);
 }
-#first_config_form .form_response{
-	display: block;
-    width: 100%;
-    padding: 10px 20px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-appearance: none;
-    border-radius: 0px;
-    outline: none;
-    box-shadow: none;
-    margin: 0px;
-    margin-top: 25px;
+#first_config_form .form_response {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border-radius: 0px;
+  outline: none;
+  box-shadow: none;
+  margin: 0px;
+  margin-top: 25px;
 }
-#first_config_form .success{
-	background: green;
+#first_config_form .success {
+  background: #008000;
 }
-#first_config_form .error{
-	background: red;
+#first_config_form .error {
+  background: #f00;
 }
-#first_config_form .load{
-	background: transparent;
+#first_config_form .load {
+  background: transparent;
 }

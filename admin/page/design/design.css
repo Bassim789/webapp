@@ -1,0 +1,106 @@
+.form_one_line {
+  display: inline-block;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 50px;
+  border: 1px solid #ddd;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 50px;
+  position: relative;
+}
+.form_one_line input {
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  padding: 0 15px;
+  border: none;
+  -webkit-appearance: none;
+  outline: none;
+  width: 70%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.form_one_line button {
+  display: inline-block;
+  position: relative;
+  float: right;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-size: 14px;
+  padding: 0 15px;
+  width: 30%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  background: #888;
+}
+.form_one_line button progress {
+  display: none;
+  position: absolute;
+  top: 18px;
+  left: 5px;
+  width: calc(100% - 10px);
+}
+.form_one_line button:active {
+  background: #999;
+}
+.admin_design_box {
+  display: inline-block;
+  vertical-align: top;
+  margin: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-top-left-radius: 20px;
+}
+.admin_design_box .title {
+  width: calc(100% - 20px);
+  display: inline-block;
+  float: left;
+  padding: 0 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.admin_design_box div {
+  width: 100%;
+}
+.admin_design_box div img {
+  display: block;
+  height: 100px;
+  margin: auto;
+  cursor: pointer;
+}
+.close_btn_little {
+  padding-right: 0px;
+  display: inline-block;
+  float: right;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+.close_btn_little:before,
+.close_btn_little:after {
+  margin-right: -2px;
+  display: inline-block;
+  content: ' ';
+  height: 18px;
+  width: 2px;
+  background-color: #666;
+}
+.close_btn_little:before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.close_btn_little:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}

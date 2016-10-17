@@ -1,0 +1,91 @@
+@import '../../../app/styl/var'
+
+form_height = 50px
+close_size = 18px
+
+.form_one_line
+	display inline-block
+	width 100%
+	max-width 800px
+	margin 20px auto
+	border-radius 50px
+	border 1px solid #ddd
+	box()
+	overflow hidden
+	height form_height
+	position relative
+	input
+		height form_height
+		line-height form_height
+		font-size 14px
+		padding 0 15px
+		border none
+		-webkit-appearance none
+		outline none
+		width 70%
+		box()
+	button
+		display inline-block
+		position relative
+		float right
+		border none
+		cursor pointer
+		outline none
+		font-size 14px
+		padding 0 15px
+		width 30%
+		box()
+		height form_height
+		line-height form_height
+		color #fff
+		background #888
+		progress
+			display none
+			position absolute
+			top 18px
+			left 5px
+			width calc(100% - 10px)
+		&:active
+			background #999
+
+.admin_design_box
+	display inline-block
+	vertical-align top
+	margin 5px
+	margin-bottom 10px
+	border 1px solid #ddd
+	border-top-left-radius 20px
+	.title
+		width calc(100% - 20px)
+		display inline-block
+		float left
+		padding 0 5px
+		box()
+	div
+		width 100%
+		img
+			display block
+			height 100px
+			margin auto
+			cursor pointer
+	
+.close_btn_little
+	padding-right 0px
+	display inline-block
+	float right
+	cursor pointer
+	width close_size
+	height close_size
+	&:before, &:after
+		margin-right -2px
+		display inline-block
+		content ' '
+		height close_size
+		width 2px
+		background-color #666
+	&:before
+		-webkit-transform rotate(45deg)
+		transform rotate(45deg)
+	&:after
+		-webkit-transform rotate(-45deg)
+		transform rotate(-45deg)

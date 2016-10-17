@@ -1,66 +1,34 @@
-
-<style>
-	
-.admin_design_box{
-	display: inline-block; 
-	vertical-align: top; 
-	margin-bottom: 10px;
-}
-
-.admin_design_box div{
-	width: 100%; 
-	cursor: pointer;
-}
-
-.admin_design_box div img{
-	width: 100px; 
-	margin: auto;
-}
-
-</style>
-
-
 <template id="template_page_admin_design">	
 	<br><br>
 	<div class="big_middle_title noselect" style="margin: auto;">
 		DESIGN
 	</div>
 	<br>
-	<div class="content_box" style="max-width: 800px;">
+	<div class="form_one_line">
+		<input event="enter:add_new_img" type="text" placeholder="Image name">
+		<button event="click:add_new_img">
+			UPLOAD
+			<progress></progress>
+		</button>
+		<form method="post" target="_blanck" enctype="multipart/form-data" style="display: none;">
+			<input event="change:upload_new_img" class="file_upload" type="file" name="files[]">
+		</form>
+	</div>
+	<br>
+	<div class="content_box">
+		{{#images}}
 		<div class="admin_design_box">
-			LOGO
-			<br>
 			<div>
-				<img event="click:change_image" data-url="{{img_logo}}">
+				<div class="title">
+					{{title}}
+				</div>
+				<a event="click:btn_delete_img" class="close_btn_little"></a>
 			</div>
-		</div>
-		<div class="admin_design_box">
-			BACKGROUND
-			<br>
-			DESKTOP
-			<br>
-			<div style="width: 90%; max-width: 200px;">
-				<img event="click:change_image" data-url="{{img_desktop}}">
-			</div>
-		</div>
-		<div class="admin_design_box">
-			BACKGROUND
-			<br>
-			MOBILE
-			<br>
 			<div>
-				<img event="click:change_image" data-url="{{img_mobile}}">
+				<img event="click:change_image" data-url="{{url}}">
 			</div>
 		</div>
-		<div class="admin_design_box">
-			BACKGROUND
-			<br>
-			SIDR
-			<br>
-			<div>
-				<img event="click:change_image" data-url="{{img_sidr}}">
-			</div>
-		</div>
+		{{/images}}
 	</div>
 	<br><br>
 </template>

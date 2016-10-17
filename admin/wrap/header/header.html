@@ -3,9 +3,7 @@
 	<div id="header_title" class="noselect" event="click:goto" page="">
 		<img src="{{logo}}" style="height: 50px;">
 	</div>
-	<div id="menu_icon" class="noselect" event="click:toggle_sidr">
-		<img src="app/img/header/menu_icon.png">
-	</div>
+	<div event="click:toggle_sidr" class="menu_btn"><div></div></div>
 	<div id="overlay_sidebar_menu" event="click:toggle_sidr"></div>
 	<div id="sidr">
 		<div class="sidr_head">
@@ -16,7 +14,7 @@
 		<div style="position: absolute; top: 0; left: 20px; height: 50px; width: 170px;">
 			<div style="display: inline-block; float: left;">
 				<div event="click:reset_auto_logout" id="auto_logout_reset" style="cursor: pointer; display: table-cell; vertical-align: middle; height: 50px;">
-					<img src="app/img/header/reload.png" style="width: 30px; padding: 0px 10px;">
+					<img src="app/img/header/reload.png" style="width: 30px; padding: 0px 10px; display: table-cell;">
 				</div>
 			</div>
 			<div id="auto_logout_time" style="display: inline-block; float: left;">
@@ -48,6 +46,7 @@
 			</ul>
 			<div style="margin-bottom: 70px;""></div>
 		</div>
+		<div id="sidr_background"></div>
 	</div>
 </template>
 

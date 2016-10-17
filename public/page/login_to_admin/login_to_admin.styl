@@ -1,0 +1,45 @@
+@import '../../../app/styl/var'
+
+#login_box
+    width 390px
+    max-width 100%
+    margin auto
+
+.popup_infobox
+    width 390px
+    max-width 100%
+    min-height 40px
+    padding 10px 10px
+    border-radius 50px
+    overflow hidden
+    margin 10px auto
+    box()
+
+.table_classic
+    color #666
+    display inline-block
+    position relative
+    border-collapse collapse
+    max-width 100%
+    overflow scroll
+    overflow-y hidden!important
+    -webkit-overflow-scrolling touch
+    margin 0
+    padding 0
+    tr
+        &:last-child
+            border-bottom none
+
+.table_classic th,
+.table_classic td
+    padding 5px 10px
+
+.form_action_btn
+    padding 10px 20px
+    background-color rgba(102, 102, 102, 1)
+    color #fff
+    cursor pointer
+    box()
+    &:active
+        background-color rgba(102, 102, 102, 0.8)
+

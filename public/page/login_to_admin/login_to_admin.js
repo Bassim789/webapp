@@ -1,100 +1,63 @@
-"use strict"
-
-page.login_to_admin = class
-{
-	constructor(name)
-	{
+page.login_to_admin = class {
+	constructor(name) {
 		template('#body', '#template_page_login_to_admin')
 		template('#login_box', '#template_login')
-		new module.Action(this,
-		{
+		new my_module.Action(this, {
 			click: ['login', 'send_new_password', 'reset_password_box', 'login_box'],
 			enter: ['login', 'send_new_password']
 		})
 	}
-
-	login_box()
-	{
+	login_box() {
 		this.clean_info_box()
-		template('#login_box', '#template_login',
-		{
+		template('#login_box', '#template_login', {
 			email: $('#email_new_password').val()
 		})
 	}
-
-	reset_password_box()
-	{
+	reset_password_box() {
 		this.clean_info_box()
-		template('#login_box', '#template_login_reset_password',
-		{
+		template('#login_box', '#template_login_reset_password', {
 			email: $('#email_login').val()
 		})
 	}
-
-	clean_info_box()
-	{
+	clean_info_box() {
 		$('.popup_infobox').html('').attr('class', 'popup_infobox')
 	}
-
-	login()
-	{
-		var that = this
-		var email = $('#email_login').val()
-		var password = $('#password_login').val()
-
+	login() {
+		var email = $('#email_login').val(),
+			password = $('#password_login').val()
 		this.popup_loading()
-
-		api('public/api/login', 'login',
-		{
+		api('public/api/login', 'login', {
 			email: email,
 			password: password
 		},
-		function(data)
-		{
-			if (data.state == 'success')
-			{
+		(data) => {
+			if (data.state == 'success') {
 				location.href = '?page=admin-homepage'
-			}
-			else
-			{
-				that.popup_infobox(data)
+			} else {
+				this.popup_infobox(data)
 			}
 		})
 	}
-
-	send_new_password()
-	{
-		var that = this
-		
+	send_new_password() {
 		this.popup_loading()
-
-		api('public/api/login', 'send_new_password',
-		{
+		api('public/api/login', 'send_new_password', {
 			email: $('#email_new_password').val()
 		},
-		function(data)
-		{
-			that.popup_infobox(data)
+		(data) => {
+			this.popup_infobox(data)
 		})
 	}
-
-	popup_loading()
-	{
+	popup_loading() {
 		$('.popup_infobox')
 			.attr('class', 'popup_infobox msg_loading')
 			.css('display', 'inline-block')
-
 		template('.popup_infobox', '#template_loading')
 	}
-
-	popup_infobox(data)
-	{	
+	popup_infobox(data) {	
 		var state_class = data.state === 'success' ? 'msg_success' : 'msg_error'
-		
 		$('.popup_infobox')
 			.html(data.msg)
 			.css('display', 'inline-block')
 			.attr('class', 'popup_infobox ' + state_class)
 	}
 }
-
