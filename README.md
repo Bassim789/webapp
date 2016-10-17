@@ -36,7 +36,7 @@ page.index = class
 }
 ```
 Result:
-![alt tag](https://cloud.githubusercontent.com/assets/14947215/18579566/c66a56aa-7bf6-11e6-8112-2660e9fe3bb3.png)
+![alt tag](https://cloud.githubusercontent.com/assets/14947215/19451485/af88c758-94ad-11e6-90d9-c0a814f0074b.png)
 
 
 ## Event binding
